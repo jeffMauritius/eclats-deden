@@ -17,14 +17,14 @@ const HomePage = () => {
           pageUrl={"snack"}
         />
         <CardComponent
-          buttonTitle={"MENU CREPES / GAUFRES"}
+          buttonTitle={"MENU GALETTE"}
           imageUrl={`bg-[url('/crepes.jpg')] bg-cover`}
-          pageUrl={"crepes"}
+          pageUrl={"galettes"}
         />
         <CardComponent
-          buttonTitle={"NOS PARTENAIRES"}
-          imageUrl={`bg-[url('/partenaires.jpg')] bg-cover`}
-          pageUrl={"snack"}
+          buttonTitle={"MENU CRÉPES"}
+          imageUrl={`bg-[url('/crepes.webp')] bg-cover`}
+          pageUrl={"crepes"}
         />
       </div>
     </div>

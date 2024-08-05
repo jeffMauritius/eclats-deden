@@ -15,7 +15,8 @@ interface MenuComponentProps {
 const MenuComponent = ({ menuTitle, type }: MenuComponentProps) => {
   return (
     <div className="p-5">
-      <h1 className="pb-5 text-center">{menuTitle}</h1>
+      <h1 className="pb-2 text-center font-bold">{menuTitle}</h1>
+      <h3 className="text-center">Garnitures supplémentaires (+50rs)</h3>
       {type === "snack" &&
         menuSnack.map(item => (
           <MenuItems
