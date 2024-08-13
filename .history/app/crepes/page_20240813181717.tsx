@@ -24,7 +24,7 @@ export default function Crepes() {
         </div>
         <div className="col-span-1 rounded-2xl border">
           <MenuComponent
-            menuTitle={"NOS CRÊPES SUCRÉES"}
+            menuTitle={"NOS CRÊPES SUCREES"}
             type="crepes-sucrees"
           />
         </div>

@@ -4,7 +4,7 @@ export const navigationData = [
         link: "/",
     },
     {
-        title: "Nos crêpes",
+        title: "Nos crépes",
         link: "/crepes",
     },
     {
