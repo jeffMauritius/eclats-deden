@@ -21,7 +21,7 @@ export const navigationData = [
     },
     {
         title: "Contact & infos",
-        link: "/location",
+        link: "/information",
     },
    
 ]

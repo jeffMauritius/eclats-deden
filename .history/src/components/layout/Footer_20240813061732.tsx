@@ -25,7 +25,7 @@ export const Footer = () => {
               <Clock />
               <p className="hidden md:block">{`Horaires d'ouverture`}</p>
             </Link>
-            <Link className="flex hover:underline md:gap-4" href="/reviews">
+            <Link className="flex hover:underline md:gap-4" href="/admin">
               <Star />
               <p className="hidden md:block">Notes et avis</p>
             </Link>

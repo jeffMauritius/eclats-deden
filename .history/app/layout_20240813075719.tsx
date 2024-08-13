@@ -9,7 +9,6 @@ import { PropsWithChildren } from "react"
 import { Providers } from "./Providers"
 import "./globals.css"
 import { Title } from "@/components/layout/Title"
-import { Footer } from "@/components/layout/Footer"
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const fontDisplay = Marck_Script({

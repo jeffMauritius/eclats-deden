@@ -11,7 +11,7 @@ export const Footer = () => {
       <div className="m-auto w-full max-w-4xl px-2 ">
         <div className="flex w-full items-center justify-center">
           <div className="flex gap-8 text-sm text-muted-foreground">
-            <Link className="flex hover:underline md:gap-4" href="/location">
+            <Link className="flex hover:underline md:gap-4" href="/information">
               <MapPin />
               <p className="hidden md:block">
                 La Cuvette Beach, Grand Baie, Île Maurice
@@ -25,7 +25,7 @@ export const Footer = () => {
               <Clock />
               <p className="hidden md:block">{`Horaires d'ouverture`}</p>
             </Link>
-            <Link className="flex hover:underline md:gap-4" href="/reviews">
+            <Link className="flex hover:underline md:gap-4" href="/admin">
               <Star />
               <p className="hidden md:block">Notes et avis</p>
             </Link>
