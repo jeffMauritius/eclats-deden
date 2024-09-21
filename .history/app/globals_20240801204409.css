@@ -70,6 +70,13 @@
     * {
       @apply border-border;
     }
+    @font-face {
+      font-family: 'Marck Script';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(/fonts/MarckScript-Regular.ttf) format('ttf');
+    }
     body {
       @apply bg-background text-foreground;
     }

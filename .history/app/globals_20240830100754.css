@@ -70,6 +70,13 @@
     * {
       @apply border-border;
     }
+    @font-face {
+      font-family: 'Playwrite CU';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url("/public/fonts/PlaywriteCU.ttf") format('ttf');
+    }
     body {
       @apply bg-background text-foreground;
     }

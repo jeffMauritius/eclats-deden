@@ -18,8 +18,8 @@ const config = {
       },
     },
     fontFamily: {
-      display: ['"Playwrite CU"', 'cursive'],
-      body: ['"Open Sans"', 'sans-serif'],
+      'display': ['"Playwrite CU"', 'cursive'],
+      'body': ['"Open Sans"', 'sans-serif'],
       playwrite: ['var(--playwrite-font)', "Playwrite CU", "cursive"],
     },
     extend: {

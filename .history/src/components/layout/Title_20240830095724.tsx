@@ -5,7 +5,9 @@ interface TitleProps {
 export function Title({ title }: TitleProps) {
   return (
     <div className="flex flex-auto justify-center ">
-      <h1 className={`pt-2 font-playwrite text-4xl  text-cyan-400 md:text-6xl`}>
+      <h1
+        className={`playwrite pt-2 text-4xl font-bold text-cyan-400 md:text-6xl`}
+      >
         {" "}
         {`~ ${title} ~`}
       </h1>

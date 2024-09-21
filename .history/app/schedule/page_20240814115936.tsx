@@ -11,6 +11,7 @@ const SchedulePage = () => {
             <h1 className="p-5 text-center font-display text-4xl font-bold text-amber-500">
               {"Horaires d'ouverture"}
             </h1>
+
             <ScheduleComponent />
           </div>
         </div>

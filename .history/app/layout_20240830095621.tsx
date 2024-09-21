@@ -20,8 +20,8 @@ const MarkScript = Marck_Script({
 })
 
 const playwrite = localFont({
-  src: "../public/fonts/PlaywriteCU-VariableFont_wght.ttf",
-  variable: "--font-playwrite",
+  src: "../src/components/PlaywriteCU.ttf",
+  variable: "--font-display",
   weight: "400",
 })
 

@@ -2,7 +2,6 @@
 import { Header } from "@/components/layout/Header"
 import { TailwindIndicator } from "@/components/TailwindIndicator"
 import { SiteConfig } from "@/lib/config"
-import localFont from "next/font/local"
 import { cn } from "@/lib/utils"
 import type { Metadata } from "next"
 import { Inter, Marck_Script } from "next/font/google"
@@ -13,15 +12,9 @@ import { Title } from "@/components/layout/Title"
 import { Footer } from "@/components/layout/Footer"
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" })
-const MarkScript = Marck_Script({
+const fontDisplay = Marck_Script({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: "400",
-})
-
-const playwrite = localFont({
-  src: "../public/fonts/PlaywriteCU-VariableFont_wght.ttf",
-  variable: "--font-playwrite",
   weight: "400",
 })
 
@@ -34,12 +27,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
       <head />
-
       <body
         className={cn(
           `flex flex-col h-screen bg-background font-sans antialiased p-5`,
           fontSans.variable,
-          playwrite.variable,
+          fontDisplay.variable,
         )}
       >
         <Providers>

@@ -19,9 +19,9 @@ const MarkScript = Marck_Script({
   weight: "400",
 })
 
-const playwrite = localFont({
-  src: "../public/fonts/PlaywriteCU-VariableFont_wght.ttf",
-  variable: "--font-playwrite",
+const fontDisplay = localFont({
+  src: "../src/components/PlaywriteCU.ttf",
+  variable: "--font-display",
   weight: "400",
 })
 
@@ -39,7 +39,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         className={cn(
           `flex flex-col h-screen bg-background font-sans antialiased p-5`,
           fontSans.variable,
-          playwrite.variable,
+          fontDisplay.variable,
         )}
       >
         <Providers>

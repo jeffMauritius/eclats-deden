@@ -19,9 +19,9 @@ const MarkScript = Marck_Script({
   weight: "400",
 })
 
-const playwrite = localFont({
-  src: "../public/fonts/PlaywriteCU-VariableFont_wght.ttf",
-  variable: "--font-playwrite",
+const fontDisplay = localFont({
+  src: "../src/components/PlaywriteCU.ttf",
+  variable: "--font-display",
   weight: "400",
 })
 
