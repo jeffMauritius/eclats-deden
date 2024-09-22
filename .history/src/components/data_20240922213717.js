@@ -2,8 +2,8 @@ export const ScheduleData = [
     {
         id: 1,
         day: "Lundi",
-        start: 8,
-        end: 18,
+        start: "-",
+        end:"-" ,
     },
     {
         id: 2,

@@ -1,38 +1,44 @@
-export const scheduleData = [
+export const ScheduleData = [
     {
         id: 1,
         day: "Lundi",
-       start: 8,
-       end: 8,
+        start: "-",
+        end:"-" ,
     },
     {
         id: 2,
         day: "Mardi",
-        hours: "Fermé",
+        start: 10,
+        end: 18,
     },
     {
         id: 3,
         day: "Mercredi",
-        hours: "Fermé",
+        start: 10,
+        end: 18,
     },
     {
         id: 4,
         day: "Jeudi",
-        hours: "Fermé",
+        start: 10,
+        end: 18,
     },
     {
         id: 5,
         day: "Vendredi",
-        hours: "Fermé",
+        start: 10,
+        end: 18,
     },
     {
         id: 6,
         day: "Samedi",
-        hours: "Fermé",
+        start: 10,
+        end: 18,
     },
     {
         id: 7,
         day: "Dimanche",
-        hours: "Fermé",
+        start: 10,
+        end: 18,
     },
     ];

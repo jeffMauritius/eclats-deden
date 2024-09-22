@@ -3,8 +3,8 @@ import { ScheduleData } from "./data"
 type Schedule = {
   id: number
   day: string
-  start: number
-  end: number
+  start: string
+  end: string
 }
 
 const ScheduleComponent = () => {
@@ -14,11 +14,11 @@ const ScheduleComponent = () => {
         {ScheduleData.map((schedule: Schedule) => (
           <div
             key={schedule.id}
-            className="flex justify-between p-3  font-display text-2xl"
+            className="font-display flex justify-between  p-3 text-2xl"
           >
             <div>{schedule.day}</div>
             <div className="font-body text-lg">
-              {schedule.start}h - {schedule.end}h
+              {schedule.start} {schedule.end}
             </div>
           </div>
         ))}

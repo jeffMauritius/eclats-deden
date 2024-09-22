@@ -2,7 +2,7 @@ export const ScheduleData = [
     {
         id: 1,
         day: "Lundi",
-        start: "Fermé",
+        start: "",
         end:"" ,
     },
     {
