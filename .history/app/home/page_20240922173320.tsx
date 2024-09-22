@@ -1,6 +1,7 @@
 "use client"
 
 import CardComponent from "@/components/homePage/CardComponent"
+import { Footer } from "@/components/layout/Footer"
 import { useClientMediaQuery } from "@/lib/isMobileDevice"
 
 const HomePage = () => {

@@ -17,6 +17,11 @@ const config = {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      display: ['"Montserrat"', 'sans-serif'],
+      body: ['"Montserrat"', 'sans-serif'],
+      playwrite: ['var(--playwrite-font)', "Playwrite CU", "cursive"],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",

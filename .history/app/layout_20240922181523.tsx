@@ -12,10 +12,8 @@ import { Title } from "@/components/layout/Title"
 import { Footer } from "@/components/layout/Footer"
 
 const montserratFont = Montserrat({
-  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
-  fallback: ["Arial", "sans-serif"],
 })
 
 export const metadata: Metadata = {
@@ -33,7 +31,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <head />
 
       <body
-        className={cn(`flex flex-col h-screen bg-background antialiased p-5`)}
+        className={cn(
+          `flex flex-col h-screen bg-background font-sans antialiased p-5`,
+        )}
       >
         <Providers>
           <div className="relative flex flex-col">

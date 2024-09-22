@@ -33,7 +33,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <head />
 
       <body
-        className={cn(`flex flex-col h-screen bg-background antialiased p-5`)}
+        className={cn(
+          `flex flex-col h-screen bg-background font-sans antialiased p-5`,
+        )}
       >
         <Providers>
           <div className="relative flex flex-col">
