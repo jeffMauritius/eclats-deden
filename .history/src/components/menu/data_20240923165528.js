@@ -234,7 +234,7 @@ export const boissons = [
     menuTitle: "Eau 50cl",
     price: 80,
     description: "Une bouteille d'eau petillante 500ml",
-    imageUrl: "/eau-plate.webp",
+    imageUrl: "/eau-gaz.webp",
   },
   {
     id: 72,

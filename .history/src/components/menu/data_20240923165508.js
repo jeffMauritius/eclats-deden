@@ -227,14 +227,14 @@ export const boissons = [
     menuTitle: "Fuze tea 50cl",
     price: 100,
     description: "Une bouteille de Fuze tea 50cl",
-    imageUrl: "/Fuze-tea.webp",
+    imageUrl: "/Fuse-tea.webp",
   },
   {
     id: 71,
     menuTitle: "Eau 50cl",
     price: 80,
     description: "Une bouteille d'eau petillante 500ml",
-    imageUrl: "/eau-plate.webp",
+    imageUrl: "/eau-gaz.webp",
   },
   {
     id: 72,
