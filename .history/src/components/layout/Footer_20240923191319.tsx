@@ -18,20 +18,19 @@ export const Footer = () => {
                 La Cuvette Beach, Grand Baie, Île Maurice
               </p>
             </Link>
-
             <div className="flex hover:underline md:hidden md:gap-4">
               <a href={phone_url}>
                 <PhoneCall />
               </a>
             </div>
 
-            <Link className="hidden hover:underline md:block md:gap-4" href="">
-              <div className="flex">
-                <PhoneCall />
-                <p className="ml-2">+230 5858 8829</p>
-              </div>
+            <Link
+              className="flex hidden hover:underline md:block md:gap-4"
+              href=""
+            >
+              <PhoneCall />
+              <p>+230 5858 8829</p>
             </Link>
-
             <Link className="flex hover:underline md:gap-4" href="/schedule">
               <Clock />
               <p className="hidden md:block">{`Horaires d'ouverture`}</p>

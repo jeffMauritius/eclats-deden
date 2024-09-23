@@ -28,7 +28,7 @@ export const Footer = () => {
             <Link className="hidden hover:underline md:block md:gap-4" href="">
               <div className="flex">
                 <PhoneCall />
-                <p className="ml-2">+230 5858 8829</p>
+                <p>+230 5858 8829</p>
               </div>
             </Link>
 
