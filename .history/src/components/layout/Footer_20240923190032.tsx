@@ -24,7 +24,7 @@ export const Footer = () => {
               </a>
             </div>
 
-            <Link className="flex hover:underline md:gap-4" href="">
+            <Link className="flex hover:underline md:gap-4" href="/legal/cgv">
               <PhoneCall />
               <p className="hidden md:block">+230 5858 8829</p>
             </Link>

@@ -18,13 +18,13 @@ export const Footer = () => {
                 La Cuvette Beach, Grand Baie, Île Maurice
               </p>
             </Link>
-            <div className="flex hover:underline md:hidden md:gap-4">
+            <div className="flex hover:underline md:gap-4">
               <a href={phone_url}>
                 <PhoneCall />
               </a>
             </div>
 
-            <Link className="flex hover:underline md:gap-4" href="">
+            <Link className="flex hover:underline md:gap-4" href="/legal/cgv">
               <PhoneCall />
               <p className="hidden md:block">+230 5858 8829</p>
             </Link>
