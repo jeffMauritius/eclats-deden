@@ -27,7 +27,12 @@ export const Footer = () => {
             </Link>
             <Link
               className="flex hover:underline md:gap-4"
-              href="https://www.instagram.com/eclatsdeden?igsh=MXNyM2UxaDQycHpwcA=="
+              href="
+jeff roussel <jfroussel75@gmail.com>
+09:24 (il y a 0 minute)
+À moi
+
+https://www.instagram.com/eclatsdeden?igsh=MXNyM2UxaDQycHpwcA=="
             >
               <Instagram />
               <p className="hidden md:block">{`Instagram`}</p>

@@ -25,10 +25,7 @@ export const Footer = () => {
               <Clock />
               <p className="hidden md:block">{`Horaires d'ouverture`}</p>
             </Link>
-            <Link
-              className="flex hover:underline md:gap-4"
-              href="https://www.instagram.com/eclatsdeden?igsh=MXNyM2UxaDQycHpwcA=="
-            >
+            <Link className="flex hover:underline md:gap-4" href="/schedule">
               <Instagram />
               <p className="hidden md:block">{`Instagram`}</p>
             </Link>
