@@ -14,7 +14,7 @@ const ScheduleComponent = () => {
         {ScheduleData.map((schedule: Schedule) => (
           <div
             key={schedule.id}
-            className="flex justify-between  p-3 md:text-2xl"
+            className="font-display flex justify-between  p-3 text-2xl"
           >
             <div>{schedule.day}</div>
             <div className="text-sm md:text-lg">
