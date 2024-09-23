@@ -33,14 +33,14 @@ export const menuCrepesSucrees = [
   {
     id: 1,
     menuTitle: "La Nutella",
-    price: 200,
+    price: 150,
     description: "«La crêpe au Nutella est une délicieuse gourmandise, fine et légère, parfaite pour les amateurs de chocolat. Tartinée généreusement de Nutella fondant, elle offre une expérience sucrée et réconfortante à chaque bouchée. Idéale pour le dessert ou une pause gourmande, elle ravit les petits et les grands.»",
     imageUrl: "/crepes.webp",
   },
   {
     id: 2,
     menuTitle: "La Gourmande",
-    price: 250,
+    price: 200,
     description: "«La crêpe au Nutella et banane est une gourmandise irrésistible, alliant la douceur du Nutella fondant et la fraîcheur des rondelles de banane. Cette crêpe fine et légère offre un équilibre parfait entre saveur chocolatée et fruitée. Idéale pour un dessert ou une collation, elle ravit les papilles des petits et des grands.»",
     imageUrl: "/crepes.webp",
   },
@@ -54,14 +54,14 @@ export const menuCrepesSucrees = [
   {
     id: 4,
     menuTitle: "La Crêpe Soleil",
-    price: 200,
+    price: 125,
     description: "«La crêpe au sucre et citron est une délicieuse combinaison de saveurs, avec une crêpe fine et dorée rehaussée de sucre et de jus de citron frais. L'acidité du citron se marie parfaitement avec la douceur du sucre, offrant une expérience gustative rafraîchissante. Idéale pour le petit-déjeuner, le goûter ou le dessert, elle séduit par sa simplicité et son goût raffiné.»",
     imageUrl: "/crepes.webp",
   },
   {
     id: 5,
     menuTitle: "La Fruitée",
-    price: 200,
+    price: 130,
     description: "«La crêpe à la confiture est une douceur classique, fine et moelleuse, généreusement garnie de confiture de fruits. Chaque bouchée offre un délicieux contraste entre la légèreté de la crêpe et la richesse fruitée de la confiture. Parfaite pour le petit-déjeuner, le goûter ou le dessert, elle séduit par sa simplicité et ses saveurs authentiques.»",
     imageUrl: "/crepes.webp",
   },
@@ -172,6 +172,13 @@ export const boissons = [
     price: 200,
     description: "Jus de fruits frais en fonction de la saison",
     imageUrl: "/fruits.webp",
+  },
+  {
+    id: 4,
+    menuTitle: "Coca cola",
+    price: 100,
+    description: "Un verre de coca 300ml",
+    imageUrl: "/coca-verre.webp",
   },
   {
     id: 5,

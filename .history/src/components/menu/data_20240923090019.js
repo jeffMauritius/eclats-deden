@@ -174,6 +174,13 @@ export const boissons = [
     imageUrl: "/fruits.webp",
   },
   {
+    id: 4,
+    menuTitle: "Coca cola",
+    price: 100,
+    description: "Un verre de coca 300ml",
+    imageUrl: "/coca-verre.webp",
+  },
+  {
     id: 5,
     menuTitle: "Coca cola",
     price: 100,

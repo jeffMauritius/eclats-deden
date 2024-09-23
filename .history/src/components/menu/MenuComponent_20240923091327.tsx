@@ -17,6 +17,7 @@ const MenuComponent = ({ menuTitle, type }: MenuComponentProps) => {
   return (
     <div className="p-5">
       <h1 className="pb-2 text-center font-bold">{menuTitle}</h1>
+      {type === "boissons " && <h3 className="text-center">dedede</h3>}
 
       {type === "crepes-sucrees" &&
         menuCrepesSucrees.map(item => (

@@ -12,11 +12,13 @@ interface MenuComponentProps {
 }
 
 const MenuComponent = ({ menuTitle, type }: MenuComponentProps) => {
-  console.log("test jeff")
-  console.log("type", type[0], menuTitle)
+  console.log("type", type, menuTitle)
   return (
     <div className="p-5">
       <h1 className="pb-2 text-center font-bold">{menuTitle}</h1>
+      {type !== "boissons " && (
+        <h3 className="text-center">Garnitures supplémentaires (+50rs)</h3>
+      )}
 
       {type === "crepes-sucrees" &&
         menuCrepesSucrees.map(item => (
