@@ -1,4 +1,4 @@
 export const SiteConfig = {
-  title: "Eclats d'éden",
+  title: "Camille snack",
   description: "La Cuvette Beach, Grand Baie, Île Maurice",
 } as const
