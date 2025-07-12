@@ -5,11 +5,11 @@ export const navigationData = [
     },
     {
         title: "Nos crêpes",
-        link: "/crepes",
+        link: "/carte",
     },
     {
         title: "Nos galettes",
-        link: "/galettes",
+        link: "/carte",
     },
     /*
     {
@@ -17,10 +17,7 @@ export const navigationData = [
         link: "/snack",
     },
     */
-    {
-        title: "boissons",
-        link: "/boissons",
-    },
+   
     {
         title: "Contact & infos",
         link: "/location",
