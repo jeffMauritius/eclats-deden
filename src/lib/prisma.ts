@@ -1,18 +1,17 @@
-// Disable TypeScript to avoid troubles with `global.` and avoid vscode import troubles
-// @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 import { PrismaClient } from "@prisma/client"
 
-export const prisma: PrismaClient =
-  global.prisma ??
-  new PrismaClient({
-    log:
-      process.env.NODE_ENV === "development"
-        ? ["query", "error", "warn"]
-        : ["error"],
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined
+}
+
+function createPrismaClient() {
+  return new PrismaClient({
+    log: process.env.NODE_ENV === "development" ? ["error", "warn"] : ["error"],
   })
+}
+
+export const prisma = globalForPrisma.prisma ?? createPrismaClient()
 
 if (process.env.NODE_ENV !== "production") {
-  global.prisma = prisma
+  globalForPrisma.prisma = prisma
 }
