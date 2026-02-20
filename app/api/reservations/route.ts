@@ -4,6 +4,8 @@ import { reservationSchema } from "@/lib/reservation-validation"
 import { sendWhatsAppNotification } from "@/lib/whatsapp-notify"
 import { ZodError } from "zod"
 
+export const dynamic = "force-dynamic"
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
