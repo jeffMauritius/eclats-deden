@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
 
 export const dynamic = "force-dynamic"
 
@@ -12,6 +11,7 @@ export async function PATCH(
     return NextResponse.json({ error: "Non autorisé" }, { status: 401 })
   }
 
+  const { prisma } = await import("@/lib/prisma")
   const { id } = await params
   const body = await request.json()
 
@@ -35,6 +35,7 @@ export async function DELETE(
     return NextResponse.json({ error: "Non autorisé" }, { status: 401 })
   }
 
+  const { prisma } = await import("@/lib/prisma")
   const { id } = await params
 
   try {

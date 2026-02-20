@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
 import { getAvailableTimeSlots, MAX_RESERVATIONS_PER_SLOT } from "@/lib/reservation-validation"
 
 export const dynamic = "force-dynamic"
@@ -15,6 +14,7 @@ export async function GET(request: NextRequest) {
   const allSlots = getAvailableTimeSlots(date)
 
   try {
+    const { prisma } = await import("@/lib/prisma")
     const reservations = await prisma.reservation.groupBy({
       by: ["timeSlot"],
       where: {

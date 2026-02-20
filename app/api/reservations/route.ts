@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
 import { reservationSchema } from "@/lib/reservation-validation"
 import { sendWhatsAppNotification } from "@/lib/whatsapp-notify"
 import { ZodError } from "zod"
@@ -8,6 +7,7 @@ export const dynamic = "force-dynamic"
 
 export async function POST(request: NextRequest) {
   try {
+    const { prisma } = await import("@/lib/prisma")
     const body = await request.json()
     const validated = reservationSchema.parse(body)
 
@@ -23,7 +23,6 @@ export async function POST(request: NextRequest) {
       },
     })
 
-    // Notification WhatsApp en arrière-plan (n'empêche pas la réservation si ça échoue)
     sendWhatsAppNotification({
       customerName: validated.customerName,
       customerPhone: validated.customerPhone,
@@ -53,6 +52,7 @@ export async function GET(request: NextRequest) {
   }
 
   try {
+    const { prisma } = await import("@/lib/prisma")
     const { searchParams } = new URL(request.url)
     const status = searchParams.get("status")
     const date = searchParams.get("date")
