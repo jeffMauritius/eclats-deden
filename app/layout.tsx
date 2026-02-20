@@ -1,53 +1,42 @@
-// app/layout.
 import { Header } from "@/components/layout/Header"
-import { TailwindIndicator } from "@/components/TailwindIndicator"
+import { Footer } from "@/components/layout/Footer"
 import { SiteConfig } from "@/lib/config"
-import { Montserrat } from "next/font/google"
-import { cn } from "@/lib/utils"
+import { Montserrat, Playfair_Display } from "next/font/google"
 import type { Metadata } from "next"
 import { PropsWithChildren } from "react"
-import { Providers } from "./Providers"
 import "./globals.css"
-import { Title } from "@/components/layout/Title"
-import { Footer } from "@/components/layout/Footer"
 
-const montserratFont = Montserrat({
-  weight: ["300", "400", "500", "700"],
+const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
-  fallback: ["Arial", "sans-serif"],
+  variable: "--font-montserrat",
+})
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
 })
 
 export const metadata: Metadata = {
-  title: SiteConfig.title,
+  title: {
+    default: SiteConfig.title,
+    template: `%s | ${SiteConfig.title}`,
+  },
   description: SiteConfig.description,
 }
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html
-      lang="en"
-      className={`${montserratFont.className} h-full`}
-      suppressHydrationWarning
+      lang="fr"
+      className={`${montserrat.variable} ${playfair.variable} h-full`}
     >
       <head />
-
-      <body
-        className={cn(`flex flex-col h-screen bg-background antialiased p-5`)}
-      >
-        <Providers>
-          <div className="relative flex flex-col">
-            <Title title="Éclats d'Éden" />
-            <div>
-              <Header />
-            </div>
-            {children}
-            <div className="mt-5 md:col-span-3">
-              <Footer />
-            </div>
-          </div>
-          <TailwindIndicator />
-        </Providers>
+      <body className="min-h-screen flex flex-col font-montserrat bg-background text-foreground antialiased">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   )

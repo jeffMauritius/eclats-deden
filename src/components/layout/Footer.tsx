@@ -1,54 +1,77 @@
 import Link from "next/link"
-import { Typography } from "../ui/typography"
-import { MapPin } from "lucide-react"
-import { PhoneCall } from "lucide-react"
-import { Clock } from "lucide-react"
-import { Instagram } from "lucide-react"
+import { MapPin, PhoneCall, Clock, Instagram } from "lucide-react"
+import { SiteConfig } from "@/lib/config"
 
-export const Footer = () => {
-  const phone_url = "tel:+23058588829"
+export function Footer() {
   return (
-    <footer className="w-6/8 z-40 border-card bg-background">
-      <div className="m-auto w-full max-w-4xl px-2 ">
-        <div className="flex w-full items-center justify-center">
-          <div className="flex gap-8 text-sm text-muted-foreground">
-            <Link className="flex hover:underline md:gap-4" href="/location">
-              <MapPin />
-              <p className="hidden md:block">
-                La Cuvette Beach, Grand Baie, Île Maurice
-              </p>
-            </Link>
+    <footer className="border-t border-border/40 bg-secondary/30">
+      <div className="container py-12">
+        <div className="grid gap-8 md:grid-cols-3">
+          <div>
+            <h3 className="font-playfair text-lg font-bold text-primary mb-4">
+              Éclats d&apos;Éden
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Crêperie &amp; Restaurant
+            </p>
+            <p className="text-sm text-muted-foreground mt-1">
+              Sunset Boulevard, Grand Baie
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Île Maurice
+            </p>
+          </div>
 
-            <div className="flex hover:underline md:hidden md:gap-4">
-              <a href={phone_url}>
-                <PhoneCall />
+          <div>
+            <h4 className="font-semibold mb-4">Contact</h4>
+            <div className="space-y-3 text-sm text-muted-foreground">
+              <a
+                href={SiteConfig.phoneUrl}
+                className="flex items-center gap-2 hover:text-primary transition-colors"
+              >
+                <PhoneCall className="h-4 w-4" />
+                {SiteConfig.phone}
+              </a>
+              <Link
+                href="/contact"
+                className="flex items-center gap-2 hover:text-primary transition-colors"
+              >
+                <MapPin className="h-4 w-4" />
+                Nous trouver
+              </Link>
+              <a
+                href={SiteConfig.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-primary transition-colors"
+              >
+                <Instagram className="h-4 w-4" />
+                Instagram
               </a>
             </div>
+          </div>
 
-            <Link className="hidden hover:underline md:block md:gap-4" href="">
-              <div className="flex">
-                <PhoneCall />
-                <p className="ml-2">+230 5858 8829</p>
+          <div>
+            <h4 className="font-semibold mb-4">Horaires</h4>
+            <div className="space-y-1 text-sm text-muted-foreground">
+              <div className="flex justify-between">
+                <span>Lundi</span>
+                <span className="text-accent font-medium">Fermé</span>
               </div>
-            </Link>
-
-            <Link className="flex hover:underline md:gap-4" href="/schedule">
-              <Clock />
-              <p className="hidden md:block">{`Horaires d'ouverture`}</p>
-            </Link>
-            <Link
-              className="flex hover:underline md:gap-4"
-              href="https://www.instagram.com/eclatsdeden?igsh=MXNyM2UxaDQycHpwcA=="
-            >
-              <Instagram />
-              <p className="hidden md:block">{`Instagram`}</p>
-            </Link>
+              <div className="flex justify-between">
+                <span>Mar — Ven</span>
+                <span>08h — 17h</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Sam — Dim</span>
+                <span>10h — 17h</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="flex w-full items-center justify-center py-3">
-          <Typography variant="base" className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Eclats d&rsquo;Eden
-          </Typography>
+
+        <div className="mt-8 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
+          &copy; {new Date().getFullYear()} Éclats d&apos;Éden — Tous droits réservés
         </div>
       </div>
     </footer>
