@@ -6,7 +6,7 @@
  *    au numéro WhatsApp +34 644 31 89 43
  * 2. CallMeBot répond avec votre apikey personnelle
  * 3. Ajouter dans .env :
- *    WHATSAPP_PHONE=23058588829       (numéro du restaurant, sans +)
+ *    WHATSAPP_PHONE=23057441889       (numéro du restaurant, sans +)
  *    WHATSAPP_APIKEY=123456            (apikey reçue de CallMeBot)
  */
 

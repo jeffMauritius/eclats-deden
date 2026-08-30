@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     }
     console.error("Reservation error:", error)
     return NextResponse.json(
-      { error: "Le service de réservation est temporairement indisponible. Veuillez nous appeler au +230 5858 8829." },
+      { error: "Le service de réservation est temporairement indisponible. Veuillez nous appeler au +230 5744 1889." },
       { status: 503 }
     )
   }

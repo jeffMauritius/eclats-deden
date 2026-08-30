@@ -4,35 +4,40 @@
 
 @layer base {
   :root {
-    --background: 180 20% 98%;
-    --foreground: 180 30% 15%;
+    /* Lagon pâle */
+    --background: 196 100% 97%;
+    --foreground: 199 58% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 180 30% 15%;
+    --card-foreground: 199 58% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 180 30% 15%;
+    --popover-foreground: 199 58% 16%;
 
-    --primary: 180 55% 35%;
+    /* Turquoise du logo */
+    --primary: 197 76% 43%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 35 40% 90%;
-    --secondary-foreground: 180 30% 15%;
+    --secondary: 195 100% 95%;
+    --secondary-foreground: 199 58% 16%;
 
-    --muted: 180 15% 94%;
-    --muted-foreground: 180 10% 45%;
+    --muted: 196 40% 94%;
+    --muted-foreground: 199 15% 42%;
 
-    --accent: 12 80% 60%;
+    /* Fuchsia du titre de la carte */
+    --accent: 338 75% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 180 15% 88%;
-    --input: 180 15% 88%;
-    --ring: 180 55% 35%;
+    --border: 197 30% 88%;
+    --input: 197 30% 88%;
+    --ring: 197 76% 43%;
 
-    --radius: 0.75rem;
+    --radius: 1.25rem;
+
+    --header-h: 4.5rem;
   }
 }
 
@@ -40,10 +45,91 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-playfair), serif;
+    font-family: var(--font-display), cursive;
+    @apply tracking-tight;
+  }
+  ::selection {
+    @apply bg-accent text-white;
+  }
+}
+
+@layer components {
+  /* Rayures turquoise/blanc de la carte papier */
+  .stripes-lagoon {
+    background-image: repeating-linear-gradient(
+      100deg,
+      theme("colors.lagoon.500") 0 22px,
+      #ffffff 22px 44px
+    );
+  }
+  .stripes-soft {
+    background-image: repeating-linear-gradient(
+      100deg,
+      theme("colors.lagoon.100") 0 14px,
+      transparent 14px 28px
+    );
+  }
+
+  /* Titre de section : gros, coloré, avec un soulignement pinceau */
+  .title-brush {
+    @apply relative inline-block;
+  }
+  .title-brush::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-3 w-full -skew-x-6 rounded-full bg-mango-300/70;
+    z-index: -1;
+  }
+
+  .text-gradient-tropic {
+    @apply bg-gradient-to-r from-lagoon-500 via-palm-500 to-mango-400 bg-clip-text text-transparent;
+  }
+  .text-gradient-sunset {
+    @apply bg-gradient-to-r from-fuchsia-500 via-coral-400 to-mango-400 bg-clip-text text-transparent;
+  }
+
+  /* Carte « sticker » légèrement inclinée */
+  .sticker {
+    @apply rounded-[1.75rem] border-2 border-lagoon-900/10 bg-white shadow-pop transition-all duration-300;
+  }
+  .sticker:hover {
+    @apply -translate-y-1.5 shadow-pop-lg;
+  }
+
+  .tape {
+    @apply absolute left-1/2 top-0 h-6 w-24 -translate-x-1/2 -translate-y-1/2 -rotate-3 rounded-sm bg-mango-200/80 backdrop-blur-sm;
+  }
+
+  /* Séparateur en vague */
+  .wave-divider {
+    @apply block h-[60px] w-full;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 { animation-delay: 0.1s; }
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-300 { animation-delay: 0.3s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
+  .animation-delay-500 { animation-delay: 0.5s; }
+
+  .pause-on-hover:hover { animation-play-state: paused; }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

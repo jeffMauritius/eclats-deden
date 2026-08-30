@@ -1,54 +1,55 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 import { type MenuCategory } from "@/lib/menu-data"
 import { cn } from "@/lib/utils"
 
 export function MenuCategoryNav({ categories }: { categories: MenuCategory[] }) {
   const [activeId, setActiveId] = useState(categories[0]?.id ?? "")
+  const barRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id)
-          }
+          if (entry.isIntersecting) setActiveId(entry.target.id)
         }
       },
-      { rootMargin: "-40% 0px -55% 0px" }
+      { rootMargin: "-45% 0px -50% 0px" }
     )
 
     for (const cat of categories) {
       const el = document.getElementById(cat.id)
       if (el) observer.observe(el)
     }
-
     return () => observer.disconnect()
   }, [categories])
 
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: "smooth" })
-  }
+  // La pastille active reste visible dans la barre qui défile horizontalement.
+  useEffect(() => {
+    const btn = barRef.current?.querySelector<HTMLElement>(`[data-cat="${activeId}"]`)
+    btn?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" })
+  }, [activeId])
 
   return (
-    <nav className="sticky top-16 z-40 bg-background/95 backdrop-blur border-b border-border/40 py-3">
-      <div className="container overflow-x-auto">
-        <div className="flex gap-2 min-w-max">
+    <nav className="sticky top-[7.25rem] z-30 border-y border-lagoon-100 bg-white/90 py-3 backdrop-blur-xl">
+      <div ref={barRef} className="no-scrollbar container overflow-x-auto">
+        <div className="flex min-w-max gap-2">
           {categories.map((cat) => (
-            <button
+            <a
               key={cat.id}
-              onClick={() => scrollTo(cat.id)}
+              href={`#${cat.id}`}
+              data-cat={cat.id}
               className={cn(
-                "px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors",
+                "whitespace-nowrap rounded-full px-4 py-2 text-sm font-bold transition-all",
                 activeId === cat.id
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
+                  ? "bg-fuchsia-500 text-white shadow-pop"
+                  : "bg-lagoon-50 text-lagoon-800/75 hover:bg-lagoon-100"
               )}
             >
+              <span className="mr-1.5">{cat.emoji}</span>
               {cat.title}
-            </button>
+            </a>
           ))}
         </div>
       </div>
