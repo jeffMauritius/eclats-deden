@@ -1,13 +1,10 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import { GalleryGrid } from "@/components/gallery/GalleryGrid"
 import { photos } from "@/lib/photos"
 import { SiteConfig } from "@/lib/config"
 
-export const metadata: Metadata = {
-  title: "Galerie",
-  description:
-    "La terrasse, les galettes, les salades et les jus frais d'Éclats d'Éden en photos — Sunset Boulevard, Grand Baie.",
-}
+export const metadata: Metadata = pageMetadata("/galerie")
 
 export default function GaleriePage() {
   return (
@@ -20,7 +17,7 @@ export default function GaleriePage() {
             📸 {photos.length} photos
           </span>
           <h1 className="mt-5 font-display text-5xl font-extrabold text-lagoon-800 md:text-6xl">
-            La <span className="text-gradient-sunset">galerie</span>
+            Éclats d&apos;Éden <span className="text-gradient-sunset">en images</span>
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg text-lagoon-900/70">
             Un tour du propriétaire : la terrasse à l&apos;ombre des palmiers, les assiettes qui

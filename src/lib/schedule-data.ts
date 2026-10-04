@@ -15,14 +15,14 @@ export const scheduleData: DaySchedule[] = [
   { day: "Jeudi", short: "Jeu", hours: "08h — 17h", open: "08:00", close: "17:00" },
   { day: "Vendredi", short: "Ven", hours: "08h — 17h", open: "08:00", close: "17:00" },
   { day: "Samedi", short: "Sam", hours: "10h — 17h", open: "10:00", close: "17:00" },
-  { day: "Dimanche", short: "Dim", hours: "10h — 17h", open: "10:00", close: "17:00" },
+  { day: "Dimanche", short: "Dim", hours: "Fermé" },
 ]
 
 /** Groupement compact pour les blocs « horaires » du footer et de l'accueil. */
 export const scheduleSummary = [
   { label: "Mardi — Vendredi", hours: "08h — 17h" },
-  { label: "Samedi — Dimanche", hours: "10h — 17h" },
-  { label: "Lundi", hours: "Fermé" },
+  { label: "Samedi", hours: "10h — 17h" },
+  { label: "Dimanche — Lundi", hours: "Fermé" },
 ]
 
 const DAY_ORDER = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"]

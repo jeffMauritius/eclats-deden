@@ -1,15 +1,12 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Image from "next/image"
 import { Clock, Instagram, MapPin, PhoneCall, Star } from "lucide-react"
 import { SiteConfig, TripadvisorRating } from "@/lib/config"
 import { scheduleData } from "@/lib/schedule-data"
 import { TodayHighlight } from "@/components/homePage/TodayHighlight"
 
-export const metadata: Metadata = {
-  title: "Contact & accès",
-  description:
-    "Éclats d'Éden — Sunset Boulevard, Grand Baie, Île Maurice. Horaires, téléphone et plan d'accès.",
-}
+export const metadata: Metadata = pageMetadata("/contact")
 
 export default function ContactPage() {
   return (
@@ -22,6 +19,9 @@ export default function ContactPage() {
           </span>
           <h1 className="mt-5 font-display text-5xl font-extrabold text-lagoon-800 md:text-6xl">
             Nous <span className="text-gradient-tropic">trouver</span>
+            <span className="mt-3 block text-2xl font-bold text-lagoon-700 md:text-3xl">
+              à Grand Baie
+            </span>
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg text-lagoon-900/70">
             Au bout de l&apos;allée fleurie, la petite maison blanche et turquoise — suivez le

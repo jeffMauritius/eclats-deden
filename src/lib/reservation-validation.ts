@@ -24,10 +24,10 @@ export const MAX_RESERVATIONS_PER_SLOT = 4
 
 export function getAvailableTimeSlots(date: string): string[] {
   const dayOfWeek = new Date(date).getDay()
-  // Monday = closed
-  if (dayOfWeek === 1) return []
-  // Saturday & Sunday: 10h-21h
-  if (dayOfWeek === 0 || dayOfWeek === 6) {
+  // Sunday & Monday = closed
+  if (dayOfWeek === 0 || dayOfWeek === 1) return []
+  // Saturday: 10h-21h
+  if (dayOfWeek === 6) {
     return TIME_SLOTS.filter((slot) => {
       const hour = parseInt(slot.split(":")[0])
       return hour >= 10 && hour <= 21

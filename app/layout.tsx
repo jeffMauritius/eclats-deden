@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { SiteConfig } from "@/lib/config"
+import { JsonLd, restaurantJsonLd, SITE_URL } from "@/lib/seo"
 import { Baloo_2, Outfit } from "next/font/google"
 import type { Metadata, Viewport } from "next"
 import { PropsWithChildren } from "react"
@@ -19,7 +20,7 @@ const baloo = Baloo_2({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://eclatsdeden.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: `${SiteConfig.title} — Crêperie & restaurant à Grand Baie`,
     template: `%s | ${SiteConfig.title}`,
@@ -50,47 +51,11 @@ export const viewport: Viewport = {
   themeColor: "#22a9e0",
 }
 
-/** Fiche établissement pour les moteurs de recherche. */
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  name: SiteConfig.title,
-  description: SiteConfig.description,
-  image: "https://eclatsdeden.com/photos/terrasse-parasols.webp",
-  servesCuisine: SiteConfig.cuisines,
-  priceRange: "Rs 150 – Rs 800",
-  telephone: SiteConfig.phone,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Sunset Boulevard",
-    addressLocality: "Grand Baie",
-    addressCountry: "MU",
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "17:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Saturday", "Sunday"],
-      opens: "10:00",
-      closes: "17:00",
-    },
-  ],
-  sameAs: [SiteConfig.instagram, SiteConfig.facebook, SiteConfig.tiktok, SiteConfig.tripadvisor],
-}
-
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="fr" className={`${outfit.variable} ${baloo.variable} h-full`}>
       <body className="flex min-h-screen flex-col bg-background font-sans text-foreground antialiased">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={restaurantJsonLd} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

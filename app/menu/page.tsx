@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 import Image from "next/image"
 import Link from "next/link"
 import { menuCategories } from "@/lib/menu-data"
@@ -7,11 +8,7 @@ import { MenuCategoryNav } from "@/components/menu/MenuCategoryNav"
 import { FloatingEmoji } from "@/components/decor/WaveDivider"
 import { SiteConfig } from "@/lib/config"
 
-export const metadata: Metadata = {
-  title: "La carte",
-  description:
-    "Galettes de sarrasin sans gluten, crêpes sucrées, burgers Wagyu, salades tropicales et jus pressés minute — la carte d'Éclats d'Éden à Grand Baie.",
-}
+export const metadata: Metadata = pageMetadata("/menu")
 
 export default function MenuPage() {
   return (
@@ -28,6 +25,9 @@ export default function MenuPage() {
           </span>
           <h1 className="mt-5 font-display text-5xl font-extrabold text-lagoon-800 md:text-6xl">
             Notre <span className="text-gradient-tropic">carte</span>
+            <span className="mt-3 block text-2xl font-bold text-lagoon-700 md:text-3xl">
+              Restaurant à Grand Baie
+            </span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-lagoon-900/70">
             Tout est préparé sur place, à la commande. Prix en roupies mauriciennes (Rs).

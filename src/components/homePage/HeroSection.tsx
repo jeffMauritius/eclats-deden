@@ -44,7 +44,7 @@ export function HeroSection() {
           </div>
 
           <h1 className="font-display text-5xl font-extrabold leading-[0.95] text-lagoon-800 sm:text-6xl xl:text-7xl">
-            Restaurant &amp;
+            Restaurant, brunch &amp;
             <span className="mx-2 inline-block -rotate-2 rounded-2xl bg-fuchsia-500 px-3 pb-1 text-white shadow-pop">
               crêperie
             </span>

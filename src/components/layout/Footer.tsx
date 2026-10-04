@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Instagram, MapPin, PhoneCall, Star } from "lucide-react"
 import { SiteConfig, TripadvisorRating } from "@/lib/config"
 import { scheduleSummary } from "@/lib/schedule-data"
-import { navigationData } from "./navigationData"
+import { navigationData, specialtyLinks } from "./navigationData"
 import { menuCategories } from "@/lib/menu-data"
 import { cn } from "@/lib/utils"
 
@@ -56,6 +56,20 @@ export function Footer() {
               {navigationData.map((n) => (
                 <li key={n.link}>
                   <Link href={n.link} className="transition-colors hover:text-white">
+                    {n.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h4 className="mt-8 font-display text-lg font-bold text-mango-300">Nos spécialités</h4>
+            <ul className="mt-4 space-y-2.5 text-sm text-white/70">
+              {specialtyLinks.map((n) => (
+                <li key={n.link}>
+                  <Link
+                    href={n.link}
+                    hrefLang={n.link.startsWith("/en") ? "en" : undefined}
+                    className="transition-colors hover:text-white"
+                  >
                     {n.title}
                   </Link>
                 </li>

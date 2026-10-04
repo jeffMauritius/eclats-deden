@@ -23,6 +23,15 @@ export const navigationData: NavItem[] = [
       { title: "Sur commande", link: "/menu#sur-commande", emoji: "🦞", hint: "Langouste & pièce de bœuf" },
     ],
   },
+  { title: "Brunch", link: "/brunch-grand-baie", emoji: "☀️" },
   { title: "Galerie", link: "/galerie", emoji: "📸" },
   { title: "Contact", link: "/contact", emoji: "📍" },
+]
+
+/** Pages thématiques (référencement local), reliées depuis le footer. */
+export const specialtyLinks = [
+  { title: "Brunch à Grand Baie", link: "/brunch-grand-baie" },
+  { title: "Galettes sans gluten", link: "/galettes-sans-gluten-grand-baie" },
+  { title: "Langouste sur commande", link: "/langouste-grand-baie" },
+  { title: "English version", link: "/en" },
 ]
